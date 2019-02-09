@@ -4,14 +4,18 @@ dev:
   tty: true
   ports:
     - "3000:3000"
-    - "3001:3001"
   volumes:
-    - ./app:/app
-    - ./client:/app/client
-    - ./package.json:/app/package.json
-    - ./package-lock.json:/app/package-lock.json
-    - ./yarn.lock:/app/yarn.lock
     - ./build:/app/build
+    - ./db:/app/db
     - ./node_modules/@types:/app/node_modules/@types
+    - ./src:/app/src
+    - ./gulpfile.js:/app/gulpfile.js
+    - ./ormconfig.dev.json:/app/ormconfig.dev.json
+    - ./ormconfig.json
+    - ./package.json:/app/package.json
+    - ./tsconfig.json:/app/tsconfig.json
+    - ./tslint.json:/app/tslint.json
+    - ./yarn.lock:/app/yarn.lock
+    
 
     # docker rmi ((docker images | select-string "<none>" | ConvertFrom-String) | Select -ExpandProperty "P3")

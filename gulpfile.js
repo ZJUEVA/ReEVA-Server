@@ -17,36 +17,7 @@ gulp.task('clean/client', function () {
 gulp.task('sw', function () {
 	exec('sw-precache-cra --no-minify --config sw-config.js', { cwd: './client' })
 })
-gulp.task('build/client', ['clean/client'], function () {
-	exec('react-scripts-ts-antd build', { cwd: './client' }, (err, stdout, stderr) => {
-		exec('sw-precache-cra --no-minify --config sw-config.js', { cwd: './client' }, (err, stdout, stderr) => {
-			gulp.src('./client/build/**/*.*').pipe(gulp.dest('build/public'))
-		})
-		console.log(stdout)
-		console.log(stderr)
 
-	})
-})
-gulp.task('test/client', function () {
-	exec('react-scripts-ts-antd test --env=jsdom', { cwd: 'client' }, (err, stdout, stderr) => {
-		console.log(stdout)
-		console.log(stderr)
-	})
-})
-
-gulp.task('dev/client', function () {
-	exec('react-scripts-ts-antd start', { cwd: 'client', env: { PORT: 3001 } }, (err, stdout, stderr) => {
-		console.log(stdout)
-		console.log(stderr)
-	})
-})
-
-gulp.task('eject/client', function () {
-	exec('react-scripts-ts-antd eject', { cwd: 'client' }, (err, stdout, stderr) => {
-		console.log(stdout)
-		console.log(stderr)
-	})
-})
 
 gulp.task('test/server', function () {
 	exec('jest --colors', (err, stdout, stderr) => {
@@ -82,6 +53,6 @@ gulp.task('nodemon', function () {
 //开发任务
 gulp.task('dev/server', ['nodemon'])
 
-gulp.task('dev', ['dev/server', 'dev/client'])
-gulp.task('build', ['build/server', 'build/client'])
-gulp.task('test', ['test/server', 'test/client'])
+gulp.task('dev', ['dev/server'])
+gulp.task('build', ['build/server'])
+gulp.task('test', ['test/server'])

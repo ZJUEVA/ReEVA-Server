@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "es5",
+      "es6",
+      "es2015",
+      "es2015.promise",
+      "es2017"
+    ],
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "watch": false,
+    "outDir": "./build",
+    "rootDir": "./src/",
+    "strict": true,
+    "noImplicitAny": false,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "typings/*"
+      ]
+    }
+  },
+  "include": [
+    "./src/**/*",
+    "./typings"
+  ],
+  "exclude": [
+    "views",
+    "static"
+  ]
+}

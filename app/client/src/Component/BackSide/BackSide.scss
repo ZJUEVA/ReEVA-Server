@@ -1,0 +1,42 @@
+.App {
+    .Back-App-header {
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+        background-color: #002f5b;
+        .floatC {
+            position: relative;
+            left: -50%;
+            float: right;
+            @media screen and (min-device-width: 720px) {
+                float: left;
+                left: 0;
+            }
+        }
+        .links {
+            position: absolute;
+            right: 5%;
+            color: white;
+            font-size: x-large;
+            margin: 0;
+        }
+        .App-logo {
+            position: relative;
+            left: 50%;
+            display: block; //    position: absolute;
+            @media screen and (min-device-width: 720px) {
+                float: left;
+                left: 0;
+            }
+            text-align: center;
+            font-size:x-large;
+            color:white;
+        }
+        h2 {
+            color: white;
+        }
+    }
+    .App-intro {
+        font-size: large;
+    }
+}

@@ -1,0 +1,5 @@
+build/*
+node_modules/@types/*
+.vscode/
+reeva.code-workspace
+*.db

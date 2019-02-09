@@ -1,0 +1,19 @@
+{
+	"type": "sqlite",
+	"database": "db/sqlite.db",
+	"entities": [
+		"build/entity/**.js",
+		"src/entity/**.ts"
+	],
+	"subscribers": [
+		"${__dirname}/build//subscriber/*.js"
+	],
+	"migrations": [
+		"${__dirname}/build//migration/*.js"
+	],
+	"cli": {
+		"entitiesDir": "src/entity",
+		"migrationsDir": "src/migration",
+		"subscribersDir": "src/subscriber"
+	}
+}
